@@ -19,6 +19,13 @@ void add_contact() {
     std::getline(std::cin, address);
     std::cout << "Enter phone number: ";
     std::getline(std::cin, phone_number);
+    
+    // Check if phone number is 11 digits long
+    if (phone_number.length() != 11) {
+        std::cout << "Error: Phone number must be exactly 11 digits long.\n";
+        return;
+    }
+    
     // Check if contact already exists
     for (const auto& contact : address_book) {
         if (contact.name == name || contact.phone_number == phone_number) {
